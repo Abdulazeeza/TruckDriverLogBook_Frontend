@@ -1,0 +1,167 @@
+@use "./variables" as variables;
+
+@mixin baseBtn(
+  $height: variables.$input-height,
+  $font-size: variables.$default-font-size,
+  $input-border-radius: variables.$input-border-radius
+) {
+  height: $height;
+  font-size: $font-size;
+  font-weight: normal;
+  padding: 0px 25px;
+  border-radius: $input-border-radius;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  outline: none !important;
+  box-shadow: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none !important;
+  border: 1px solid transparent;
+}
+
+@mixin btnDisabled {
+  &:disabled {
+    cursor: not-allowed;
+    background: variables.$disabled-input-color !important;
+    color: variables.$danger-color !important;
+    border-color: variables.$border-color !important;
+    filter: brightness(1) !important;
+  }
+}
+
+@mixin inputErrorMessage() {
+  margin-top: 2px;
+  min-height: 15px;
+  color: variables.$danger-color;
+  display: block;
+  & > span {
+    line-height: 1;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+  }
+}
+
+@mixin baseInput(
+  $height: variables.$input-height,
+  $border-color: variables.$border-color,
+  $input-border-radius: variables.$input-border-radius,
+  $input-padding: variables.$input-padding,
+  $font-size: variables.$input-font-size,
+  $active-border-color: variables.$primary-color
+) {
+  height: $height;
+  border: 1px solid $border-color;
+  border-radius: $input-border-radius;
+  padding: $input-padding;
+  background: variables.$white-color;
+  width: 100%;
+  outline: none;
+  box-shadow: none !important;
+  font-size: $font-size;
+
+  &:hover {
+    border-color: $active-border-color;
+  }
+
+  &:focus {
+    border: 2px solid $active-border-color;
+  }
+
+  &:focus-within {
+    border: 2px solid $active-border-color;
+  }
+
+  &::placeholder {
+    font-size: $font-size;
+  }
+
+  &:disabled,
+  &.isDisabled {
+    cursor: not-allowed;
+    background: variables.$disabled-input-color !important;
+    color: variables.$disabled-placeholder-color !important;
+    border-color: $border-color !important;
+  }
+
+  &.error-border {
+    border-color: variables.$danger-color !important;
+  }
+
+  /* Chrome,
+    Safari,
+    Edge,
+    Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@mixin flex {
+  display: flex;
+}
+@mixin flex-item-center {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-row($gap: 0) {
+  @include flex;
+  flex-direction: row;
+  gap: $gap;
+}
+@mixin flex-col($gap: 0) {
+  @include flex;
+  flex-direction: column;
+  gap: $gap;
+}
+@mixin justify-content-between-col($gap: 0) {
+  @include flex-col;
+  justify-content: space-between;
+  gap: $gap;
+}
+@mixin justify-content-between-row($gap: 0) {
+  @include flex-row;
+  justify-content: space-between;
+  gap: $gap;
+}
+@mixin justify-content-end-row($gap: 0) {
+  @include flex-row;
+  justify-content: flex-end;
+  gap: $gap;
+}
+@mixin align-items-center-row($gap: 0) {
+  @include flex-row;
+  align-items: center;
+  gap: $gap;
+}
+@mixin align-items-center-col($gap: 0) {
+  @include flex-col;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin bordered-col($gap: 0) {
+  @include flex-col($gap);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid variables.$border-color;
+}
+
+@mixin bordered-row($gap: 0) {
+  @include flex-row($gap);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid variables.$border-color;
+}

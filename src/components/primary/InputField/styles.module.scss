@@ -1,0 +1,12 @@
+@use "@/assets/styles/_index" as base;
+
+.input-field {
+  text-align: left;
+  input {
+    @include base.baseInput;
+  }
+
+  .error-message {
+    @include base.inputErrorMessage;
+  }
+}

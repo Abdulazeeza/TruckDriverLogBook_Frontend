@@ -1,0 +1,33 @@
+@use "@/assets/styles/_index" as base;
+
+.btn {
+  @include base.baseBtn;
+
+  &--primary {
+    @extend .btn;
+    background-color: base.$primary-color;
+    color: base.$white-color;
+    border-color: base.$primary-color;
+
+    &:hover {
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--primary-outline {
+    @extend .btn;
+    color: base.$primary-color;
+    background-color: base.$white-color;
+    border-color: base.$primary-color;
+
+    &:hover {
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

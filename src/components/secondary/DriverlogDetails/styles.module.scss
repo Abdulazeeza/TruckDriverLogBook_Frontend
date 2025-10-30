@@ -1,0 +1,12 @@
+@use "@/assets/styles/_index" as base;
+
+.gridDetailsView {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 30px;
+  background-color: base.$white-color;
+  row-gap: 30px;
+  border-radius: 12px;
+  padding: base.$horizontal-padding;
+  border: 1px solid base.$border-color;
+}

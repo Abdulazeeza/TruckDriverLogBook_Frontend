@@ -1,0 +1,68 @@
+@use "@/assets/styles/_index.scss" as base;
+
+.tableSection {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  min-height: 200px;
+  padding-top: 20px;
+
+  table {
+    border-collapse: collapse;
+    background-color: base.$white-color;
+    min-width: 100%;
+
+    th,
+    td {
+      padding: 10px 24px;
+      font-size: 12px;
+      text-align: left;
+      min-width: 140px;
+      max-width: 140px;
+
+      &:first-child {
+        min-width: 150px;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    thead {
+      th {
+        color: #696677;
+      }
+    }
+
+    tbody {
+      tr {
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        // color: base.$dark-color;
+        padding: 12px 24px;
+      }
+    }
+  }
+  .actionView {
+    td:last-child,
+    th:last-child {
+      max-width: none !important;
+      z-index: 100;
+      position: sticky;
+      right: 0;
+      border-left: 1px solid base.$border-color;
+      width: auto;
+      max-width: max-content;
+      z-index: 1;
+      background: base.$white-color;
+    }
+    th:last-child {
+      text-align: right;
+    }
+  }
+}

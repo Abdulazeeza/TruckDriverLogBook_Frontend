@@ -1,0 +1,10 @@
+@use "@/assets/styles/index.scss" as base;
+
+.selectContainer {
+  text-align: left;
+  @include base.flex-col();
+
+  .error-message {
+    @include base.inputErrorMessage;
+  }
+}

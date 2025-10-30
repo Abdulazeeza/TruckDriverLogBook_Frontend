@@ -1,0 +1,61 @@
+@use "@/assets/styles/index.scss" as base;
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin: auto;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3003;
+
+  &.right,
+  &.left {
+    justify-content: flex-end;
+    .modal__container {
+      height: 100vh;
+      max-height: 100%;
+      border-radius: 0;
+    }
+  }
+  &.left {
+    justify-content: flex-start;
+  }
+
+  // @include base.respond-to("tablet") {
+  //   align-items: flex-end;
+  // }
+
+  &__container {
+    background-color: base.$white-color;
+    border-radius: 10px;
+    position: relative;
+    max-height: 95%;
+    overflow: auto;
+    padding: 15px 15px 25px 15px;
+    // @include base.respond-to("tablet") {
+    //   border-radius: 20px;
+    //   border-bottom-left-radius: 0;
+    //   border-bottom-right-radius: 0;
+    //   width: 100% !important;
+    //   padding: 25px 15px 25px 15px;
+    // }
+  }
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+}

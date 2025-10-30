@@ -1,0 +1,14 @@
+@use "@/assets/styles/_index" as base;
+
+.pageWrapper {
+  padding: base.$vertical-padding base.$horizontal-padding;
+}
+
+.tableWrapper {
+  min-height: 150px;
+  background: base.$white-color;
+  border-radius: 16px;
+  padding-bottom: 0px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}

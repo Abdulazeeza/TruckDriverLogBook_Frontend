@@ -1,0 +1,20 @@
+// colors
+$main--bg: #e5e5e5;
+$primary-color: #19ae57;
+$white-color: #fff;
+$border-color: rgba(151, 151, 151, 0.8);
+$danger-color: #dc3545;
+$danger-bg-color: #ffeee9;
+$disabled-input-color: rgba(0, 0, 0, 0.05);
+$disabled-placeholder-color: -internal-light-dark(
+  rgb(84, 84, 84),
+  rgb(170, 170, 170)
+);
+
+$input-height: 45px;
+$input-padding: 0 15px;
+$input-border-radius: 4px;
+$input-font-size: 14px;
+$default-font-size: 16px;
+$vertical-padding: 10px;
+$horizontal-padding: 15px;

@@ -1,0 +1,14 @@
+@use "@/assets/styles/_index" as base;
+
+.loginForm {
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid base.$border-color;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+  min-height: 200px;
+  @include base.flex-col($gap: 10px);
+}

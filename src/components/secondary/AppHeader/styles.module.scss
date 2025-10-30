@@ -1,0 +1,12 @@
+@use "@/assets/styles/_index" as base;
+
+.header {
+  border-bottom: 1px solid base.$border-color;
+  padding: base.$vertical-padding base.$horizontal-padding;
+  @include base.justify-content-between-row($gap: 30px);
+  align-items: center;
+
+  .title {
+    color: base.$primary-color;
+  }
+}
