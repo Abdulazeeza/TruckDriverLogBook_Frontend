@@ -55,12 +55,13 @@ export const useDriverLogTable = ({
           React.createElement(
             Button,
             {
+              children: "View",
               style: { height: "32px" },
               variantColor: "btn--primary-outline",
               onClick: () => {
                 navigate(
                   pathConstants.DRIVER_LOG_EVENT({
-                    driver_id: driver_id,
+                    driver_id: `${driver_id}`,
                     log_id: row?.original?.id,
                   })
                 );
