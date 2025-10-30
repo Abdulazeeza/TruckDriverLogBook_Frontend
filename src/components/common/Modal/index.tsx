@@ -1,8 +1,7 @@
-"use client";
-import { CancelIcon } from "@/assets/icons";
 import styles from "./styles.module.scss";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { CancelIcon } from "../../../assets/icons";
 
 export const Modal = ({
   children,

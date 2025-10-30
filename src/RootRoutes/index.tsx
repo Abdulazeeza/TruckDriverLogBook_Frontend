@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { pages } from "../pages";
 import { pathConstants } from "./pathContants";
 import { layouts } from "../layouts";
@@ -6,6 +6,12 @@ import { layouts } from "../layouts";
 const RootRoutes = () => {
   return (
     <Routes>
+      {/* Redirect landing page to register */}
+      <Route
+        path="/"
+        element={<Navigate to={pathConstants.REGISTER_DRIVER} replace />}
+      />
+
       {/* Start Access section */}
       <Route element={<layouts.AuthLayout />}>
         <Route
@@ -33,7 +39,7 @@ const RootRoutes = () => {
           element={<pages.DriverLogEvent />}
         />
       </Route>
-      {/* End appp section */}
+      {/* End app section */}
     </Routes>
   );
 };
